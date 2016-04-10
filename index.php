@@ -18,6 +18,7 @@ session_start();
 
 </head>
 <body>
+
 <?php
 if(isset($_POST['submit'])){
 	//check login
@@ -49,7 +50,8 @@ if(isset($_POST['submit'])){
    	<form action = "index.php" method="post">
 	Username<input class="form-control"type="text" name="name"></br>
 	Password<input class="form-control"type="password" name="password"></br>
-	<input type="submit" name="submit" value="login" class="btn btn-success btn-block">
+	<input type="submit" name="submit" value="login" class="btn btn-success btn-block"><br>
+	<a href="register.php">register?</a>
 	</form>
 	</div>
 	</div>

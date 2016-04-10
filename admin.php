@@ -33,8 +33,9 @@ if(isset($_POST['submit'])){
 	$title =$_POST['title'];
 	$category = $_POST['category'];
 	$content = $_POST['content'];
+	$posted = $_SESSION['name'];
 
-	mysql_query("INSERT INTO blogdata(title,category,content) VALUES ('$title','$category','$content')");
+	mysql_query("INSERT INTO blogdata(title,category,content,Postedby) VALUES ('$title','$category','$content','$posted')");
 	header("Location:base.php");
 }else{
 ?>
@@ -48,9 +49,9 @@ SIGNED IN AS <?php echo $_SESSION['name']; ?><br><a href="logout.php">logout</a>
 	<h1>Create New Post</h1>
 	<hr>
 	<form action='admin.php' method="post">
-	<h4>Title:</h4><input class ="form-control" type="text" name="title"><br>
+	<h4>Title:</h4><input class ="form-control" type="text" name="title" required><br>
 	<h4>Category:</h4><input class ="form-control" type="text" name="category"><br>
-	<h4>Content:</h4><textarea class="form-control" name="content"></textarea><br>
+	<h4>Content:</h4><textarea class="form-control" name="content" required></textarea><br>
 	<input type="submit" name="submit" value="Post" class="btn btn-primary btn-block">
 
 	</form>
