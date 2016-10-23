@@ -66,6 +66,6 @@ SIGNED IN AS <?php echo $_SESSION['name']; ?><br><a href="logout.php">logout</a>
 </html>
 <?php
 }else echo"you must login first <a href='index.php'>login</a>";
-
+<?php echo "hello"; ?>
 ?>
 
